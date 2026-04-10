@@ -22,19 +22,6 @@ function App() {
         return <BillingPage />;
     }
   };
-  let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  console.log("Install available");
-});
-
-function installApp() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-  }
-}
 
   return (
     <div className="app">
