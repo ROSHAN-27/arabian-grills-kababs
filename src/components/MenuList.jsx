@@ -42,6 +42,9 @@ export default function MenuList({ onAddItem }) {
       <div className="menu-grid">
         {filteredItems.map(item => (
           <div key={item.id} className="menu-item">
+            <div className="item-image">
+              <img src={item.image} alt={item.name} />
+            </div>
             <div className="item-info">
               <h3>{item.name}</h3>
               <p className="category-tag">{item.category}</p>

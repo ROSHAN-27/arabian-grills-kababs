@@ -9,7 +9,16 @@ const STATIC_ASSETS = [
   "/manifest.json",
   "/service-worker.js",
   "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/icons/icon-512.png",
+  "/images/chicken-kabab.jpg",
+  "/images/seekh-kabab.jpg",
+  "/images/grilled-chicken.jpg",
+  "/images/chicken-shawarma.jpg",
+  "/images/chicken-biryani.jpg",
+  "/images/soft-drink.jpg",
+  "/images/water-bottle.jpg",
+  "/images/iced-tea.jpg",
+  "/images/lassi.jpg"
 ];
 
 // Install event - cache static assets
