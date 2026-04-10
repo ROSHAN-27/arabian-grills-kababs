@@ -54,6 +54,12 @@ function App() {
           >
             📊 Dashboard
           </button>
+          <button
+            onClick={() => window.installApp()}
+            className="nav-btn install-btn"
+          >
+            📱 Install App
+          </button>
         </div>
       </nav>
 
