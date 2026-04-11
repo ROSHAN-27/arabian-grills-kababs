@@ -12,10 +12,15 @@ export default function BillingPage() {
 
   const handleAddItem = (item) => {
     setOrder(prevOrder => {
-      const existingItem = prevOrder.find(o => o.id === item.id);
+      const existingItem = prevOrder.find(o => o.id === item.id && 
+        ((!o.selectedOption && !item.selectedOption) || 
+         (o.selectedOption && item.selectedOption && o.selectedOption.name === item.selectedOption.name)));
       if (existingItem) {
         return prevOrder.map(o =>
-          o.id === item.id ? { ...o, quantity: o.quantity + 1 } : o
+          o.id === item.id && 
+          ((!o.selectedOption && !item.selectedOption) || 
+           (o.selectedOption && item.selectedOption && o.selectedOption.name === item.selectedOption.name)) 
+            ? { ...o, quantity: o.quantity + 1 } : o
         );
       }
       return [...prevOrder, { ...item, quantity: 1 }];

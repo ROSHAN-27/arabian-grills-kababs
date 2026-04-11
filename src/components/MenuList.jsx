@@ -50,13 +50,29 @@ export default function MenuList({ onAddItem }) {
               <p className="category-tag">{item.category}</p>
             </div>
             <div className="item-footer">
-              <span className="price">₹{item.price}</span>
-              <button
-                onClick={() => onAddItem(item)}
-                className="add-btn"
-              >
-                Add
-              </button>
+              {item.options ? (
+                <div className="option-buttons">
+                  {item.options.map(option => (
+                    <button
+                      key={option.name}
+                      onClick={() => onAddItem({ ...item, selectedOption: option, price: option.price, name: `${item.name} (${option.name})` })}
+                      className="option-btn"
+                    >
+                      {option.name} ₹{option.price}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <span className="price">₹{item.price}</span>
+                  <button
+                    onClick={() => onAddItem(item)}
+                    className="add-btn"
+                  >
+                    Add
+                  </button>
+                </>
+              )}
             </div>
           </div>
         ))}

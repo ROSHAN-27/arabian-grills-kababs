@@ -1,14 +1,16 @@
 // Menu items for Arabian Grills & Kababs
 export const menuItems = [
   // Kababs
-  { id: 1, name: 'Chicken Kabab', price: 180, category: 'Kabab', image: '/images/chicken-kabab.jpg' },
+  { id: 1, name: 'Chicken Kabab', category: 'Kabab', image: '/images/chicken-kabab.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
   { id: 3, name: 'Seekh Kabab', price: 200, category: 'Kabab', image: '/images/seekh-kabab.jpg' },
 
   // Grilled Items
   { id: 5, name: 'Grilled Chicken', price: 320, category: 'Grilled', image: '/images/grilled-chicken.jpg' },
+    { id: 6, name: 'Al faham Chicken', category: 'Grilled', image: '/images/grilled-beef.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
 
   // Shawarma
-  { id: 8, name: 'Chicken Shawarma', price: 150, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+    { id: 8, name: 'Chicken Shawarma', price: 150, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+
 
   // Biryani
   { id: 10, name: 'Chicken Biryani', price: 250, category: 'Biryani', image: '/images/chicken-biryani.jpg' },

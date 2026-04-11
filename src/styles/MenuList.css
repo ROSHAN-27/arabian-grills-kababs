@@ -162,6 +162,33 @@
   transform: scale(0.95);
 }
 
+.option-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.option-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.option-btn:active {
+  transform: scale(0.95);
+}
+
 .no-items {
   text-align: center;
   padding: 2rem;
@@ -191,5 +218,10 @@
   .add-btn {
     padding: 0.4rem 0.6rem;
     font-size: 11px;
+  }
+
+  .option-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 10px;
   }
 }
