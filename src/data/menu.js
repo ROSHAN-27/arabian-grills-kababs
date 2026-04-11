@@ -8,11 +8,11 @@ export const menuItems = [
   { id: 5, name: 'Grilled Chicken', price: 320, category: 'Grilled', image: '/images/grilled-chicken.jpg' },
     { id: 6, name: 'Al faham Chicken', category: 'Grilled', image: '/images/grilled-beef.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
 
-  // Shawarma
-    { id: 8, name: 'Chicken Roll', price: 80, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
-    { id: 9, name: 'Paneer Roll', price: 70, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
-    { id: 17, name: 'Egg Roll', price: 60, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
-    { id: 18, name: 'Egg Chicken Roll', price: 90, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+  // Kolkata Kati Rolls
+    { id: 8, name: 'Chicken Roll', price: 80, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
+    { id: 9, name: 'Paneer Roll', price: 70, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
+    { id: 17, name: 'Egg Roll', price: 60, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
+    { id: 18, name: 'Egg Chicken Roll', price: 90, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
 
 
 
@@ -26,4 +26,4 @@ export const menuItems = [
   { id: 16, name: 'Lassi', price: 80, category: 'Drinks', image: '/images/lassi.jpg' },
 ];
 
-export const categories = ['All', 'Kabab', 'Grilled', 'Shawarma', 'Biryani', 'Drinks'];
+export const categories = ['All', 'Kabab', 'Grilled', 'Kolkata Kati Rolls', 'Biryani', 'Drinks'];
