@@ -22,6 +22,7 @@ export const storage = {
       total: orderData.total,
       amountGiven: orderData.amountGiven,
       change: orderData.change,
+      completed: false,
       timestamp: new Date().toISOString(),
       date: new Date().toLocaleDateString(),
       time: new Date().toLocaleTimeString(),
@@ -51,6 +52,16 @@ export const storage = {
     const today = new Date().toLocaleDateString();
     const orders = storage.getOrders();
     return orders.filter(order => order.date === today);
+  },
+
+  // Mark an order completed in storage
+  markOrderComplete: (orderNumber) => {
+    const orders = storage.getOrders();
+    const updatedOrders = orders.map(order =>
+      order.orderNumber === orderNumber ? { ...order, completed: true } : order
+    );
+    localStorage.setItem(ORDERS_KEY, JSON.stringify(updatedOrders));
+    return updatedOrders;
   },
 
   // Calculate sales statistics

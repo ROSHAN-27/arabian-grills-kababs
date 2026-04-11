@@ -4,7 +4,6 @@ import '../styles/KitchenDisplay.css';
 
 export default function KitchenDisplay() {
   const [orders, setOrders] = useState([]);
-  const [completedOrders, setCompletedOrders] = useState(new Set());
 
   useEffect(() => {
     // Simulate getting new orders - in real app, would be from API/websocket
@@ -14,7 +13,9 @@ export default function KitchenDisplay() {
   }, []);
 
   const handleOrderComplete = (orderNumber) => {
-    setCompletedOrders(prev => new Set([...prev, orderNumber]));
+    const updatedOrders = storage.markOrderComplete(orderNumber);
+    const todayOrders = updatedOrders.filter(order => order.date === new Date().toLocaleDateString());
+    setOrders(todayOrders.reverse());
   };
 
   const handleRefresh = () => {
@@ -23,7 +24,7 @@ export default function KitchenDisplay() {
     setOrders(todayOrders.reverse());
   };
 
-  const incompleteOrders = orders.filter(order => !completedOrders.has(order.orderNumber));
+  const incompleteOrders = orders.filter(order => !order.completed);
 
   return (
     <div className="kitchen-display">
@@ -74,12 +75,12 @@ export default function KitchenDisplay() {
         </div>
       )}
 
-      {completedOrders.size > 0 && (
+      {orders.some(order => order.completed) && (
         <div className="completed-orders-section">
-          <h3>Completed Orders ({completedOrders.size})</h3>
+          <h3>Completed Orders ({orders.filter(order => order.completed).length})</h3>
           <div className="completed-list">
             {orders
-              .filter(order => completedOrders.has(order.orderNumber))
+              .filter(order => order.completed)
               .map(order => (
                 <div key={order.orderNumber} className="completed-order-item">
                   Order #{order.orderNumber} - {order.items.length} items
