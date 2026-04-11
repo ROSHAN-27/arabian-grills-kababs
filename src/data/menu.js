@@ -1,11 +1,11 @@
 // Menu items for Arabian Grills & Kababs
 export const menuItems = [
   // Kababs
-  { id: 1, name: 'Chicken Kabab', category: 'Kabab', image: '/images/chicken-kabab.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
+  { id: 1, name: 'Chicken Kabab', category: 'Kabab', image: '/images/chicken-kabab.jpg', options: [{name: '250gm', price: 100}, {name: '500gm', price: 200}, {name: '750gm', price: 300}, {name: '1000gm', price: 400}] },
   { id: 3, name: 'Seekh Kabab', price: 200, category: 'Kabab', image: '/images/seekh-kabab.jpg' },
 
   // Grilled Items
-  { id: 5, name: 'Grilled Chicken', price: 320, category: 'Grilled', image: '/images/grilled-chicken.jpg' },
+  { id: 5, name: 'Grilled Chicken', category: 'Grilled', image: '/images/grilled-chicken.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
     { id: 6, name: 'Al faham Chicken', category: 'Grilled', image: '/images/grilled-beef.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
 
   // Kolkata Kati Rolls
