@@ -9,7 +9,11 @@ export const menuItems = [
     { id: 6, name: 'Al faham Chicken', category: 'Grilled', image: '/images/grilled-beef.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
 
   // Shawarma
-    { id: 8, name: 'Chicken Shawarma', price: 150, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+    { id: 8, name: 'Chicken Roll', price: 80, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+    { id: 9, name: 'Paneer Roll', price: 70, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+    { id: 17, name: 'Egg Roll', price: 60, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+    { id: 18, name: 'Egg Chicken Roll', price: 90, category: 'Shawarma', image: '/images/chicken-shawarma.jpg' },
+
 
 
   // Biryani
