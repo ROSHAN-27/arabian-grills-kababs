@@ -27,12 +27,7 @@ function App() {
     <div className="app">
       <nav className="navbar">
         <div className="navbar-brand">
-          <img
-            src="/images/logo.jpeg"
-            alt="Arabian Grills & Kababs logo"
-            className="nav-logo"
-          />
-          <h1>Arabian Grills & Kababs POS</h1>
+          <h1>Arabian <span className="text-primary">Grills & </span> <span className="text-primary">Kababs</span></h1>
         </div>
         <div className="navbar-menu">
           <button

@@ -58,18 +58,6 @@ export default function BillingPage() {
   if (completedOrder) {
     return (
       <div className="billing-page">
-        <div className="billing-header">
-          <img
-            src="/images/Arabian%20Grills%20and%20kababs%20logo.jpeg"
-            alt="Arabian Grills & Kababs logo"
-            className="billing-logo"
-          />
-          <div>
-            <h1>Arabian Grills & Kababs POS</h1>
-            <p>Billing & order management</p>
-          </div>
-        </div>
-
         <Receipt
           order={completedOrder.items}
           orderNumber={completedOrder.orderNumber}
@@ -93,18 +81,6 @@ export default function BillingPage() {
 
   return (
     <div className="billing-page">
-      <div className="billing-header">
-        <img
-          src="/images/Arabian%20Grills%20and%20kababs%20logo.jpeg"
-          alt="Arabian Grills & Kababs logo"
-          className="billing-logo"
-        />
-        <div>
-          <h1>Arabian Grills & Kababs POS</h1>
-          <p>Billing & order management</p>
-        </div>
-      </div>
-
       <div className="menu-section">
         <MenuList onAddItem={handleAddItem} />
       </div>
