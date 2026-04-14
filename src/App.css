@@ -34,7 +34,8 @@ html, body, #root {
 
 /* Navbar Styles */
 .navbar {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); */
+  background-color: black;
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -52,12 +53,12 @@ html, body, #root {
 }
 
 .nav-logo {
-  width: 42px;
+  width: 72px;
   height: 42px;
   object-fit: cover;
   border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.15);
+  /* border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15); */
 }
 
 .navbar-brand h1 {

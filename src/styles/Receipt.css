@@ -18,9 +18,22 @@
 }
 
 .receipt-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   margin-bottom: 1.5rem;
   border-bottom: 2px dashed var(--dark-color);
   padding-bottom: 1rem;
+}
+
+.receipt-logo {
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 12px;
+  /* border: 2px solid var(--border-color); */
+  /* background: white; */
 }
 
 .receipt-header h1 {

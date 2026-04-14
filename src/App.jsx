@@ -32,7 +32,7 @@ function App() {
             alt="Arabian Grills & Kababs logo"
             className="nav-logo"
           />
-          <h1>🍖 Arabian Grills & Kababs POS</h1>
+          <h1>Arabian Grills & Kababs POS</h1>
         </div>
         <div className="navbar-menu">
           <button

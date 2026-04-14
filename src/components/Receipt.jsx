@@ -24,9 +24,21 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
             text-align: center;
           }
           .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+          }
+          .header img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+          .title {
             font-size: 20px;
             font-weight: bold;
-            margin-bottom: 10px;
           }
           .order-info {
             font-size: 12px;
@@ -73,7 +85,10 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
       </head>
       <body>
         <div class="receipt">
-          <div class="header">Arabian Grills & Kababs</div>
+          <div class="header">
+            <img src="/images/Arabian Grills and kababs logo.jpeg" alt="Logo" />
+            <div class="title">Arabian Grills & Kababs</div>
+          </div>
           
           <div class="order-info">
             Order #${orderNumber}<br/>
@@ -126,8 +141,15 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
     <div className="receipt-container">
       <div ref={receiptRef} className="receipt">
         <div className="receipt-header">
-          <h1>Arabian Grills & Kababs</h1>
-          <p className="tagline">Fine Dining</p>
+          <img
+            src="/images/Arabian Grills and kababs logo.jpeg"
+            alt="Arabian Grills & Kababs logo"
+            className="receipt-logo"
+          />
+          <div>
+            <h1>Arabian Grills & Kababs</h1>
+            <p className="tagline">Fine Dining</p>
+          </div>
         </div>
 
         <div className="receipt-order-info">
