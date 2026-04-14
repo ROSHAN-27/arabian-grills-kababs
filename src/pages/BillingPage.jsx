@@ -12,15 +12,10 @@ export default function BillingPage() {
 
   const handleAddItem = (item) => {
     setOrder(prevOrder => {
-      const existingItem = prevOrder.find(o => o.id === item.id && 
-        ((!o.selectedOption && !item.selectedOption) || 
-         (o.selectedOption && item.selectedOption && o.selectedOption.name === item.selectedOption.name)));
+      const existingItem = prevOrder.find(o => o.id === item.id);
       if (existingItem) {
         return prevOrder.map(o =>
-          o.id === item.id && 
-          ((!o.selectedOption && !item.selectedOption) || 
-           (o.selectedOption && item.selectedOption && o.selectedOption.name === item.selectedOption.name)) 
-            ? { ...o, quantity: o.quantity + 1 } : o
+          o.id === item.id ? { ...o, quantity: o.quantity + 1 } : o
         );
       }
       return [...prevOrder, { ...item, quantity: 1 }];
@@ -63,6 +58,18 @@ export default function BillingPage() {
   if (completedOrder) {
     return (
       <div className="billing-page">
+        <div className="billing-header">
+          <img
+            src="/images/Arabian%20Grills%20and%20kababs%20logo.jpeg"
+            alt="Arabian Grills & Kababs logo"
+            className="billing-logo"
+          />
+          <div>
+            <h1>Arabian Grills & Kababs POS</h1>
+            <p>Billing & order management</p>
+          </div>
+        </div>
+
         <Receipt
           order={completedOrder.items}
           orderNumber={completedOrder.orderNumber}
@@ -86,6 +93,18 @@ export default function BillingPage() {
 
   return (
     <div className="billing-page">
+      <div className="billing-header">
+        <img
+          src="/images/Arabian%20Grills%20and%20kababs%20logo.jpeg"
+          alt="Arabian Grills & Kababs logo"
+          className="billing-logo"
+        />
+        <div>
+          <h1>Arabian Grills & Kababs POS</h1>
+          <p>Billing & order management</p>
+        </div>
+      </div>
+
       <div className="menu-section">
         <MenuList onAddItem={handleAddItem} />
       </div>

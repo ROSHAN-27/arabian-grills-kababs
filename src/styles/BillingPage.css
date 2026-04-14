@@ -5,6 +5,37 @@
   min-height: calc(100vh - 200px);
 }
 
+.billing-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.billing-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #fff8f4;
+}
+
+.billing-header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  color: var(--primary-color);
+}
+
+.billing-header p {
+  margin: 0.25rem 0 0;
+  color: var(--secondary-color);
+}
+
 .menu-section {
   display: flex;
   flex-direction: column;
