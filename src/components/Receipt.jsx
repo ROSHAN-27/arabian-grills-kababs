@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import '../styles/Receipt.css';
 
-export default function Receipt({ order, orderNumber, date, time, subtotal, tax, total, amountGiven, change }) {
+export default function Receipt({ order, orderNumber, date, time, subtotal, tax, total, amountGiven, change, onPrint }) {
   const receiptRef = useRef();
 
   const handlePrint = () => {
@@ -86,7 +86,6 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
       <body>
         <div class="receipt">
           <div class="header">
-            <img src="/images/logo.jpeg" alt="Logo" />
             <div class="title">Arabian Grills & Kababs</div>
           </div>
           
@@ -135,17 +134,17 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
     `);
     printWindow.document.close();
     printWindow.print();
+
+    // Call the onPrint callback if provided
+    if (onPrint) {
+      onPrint();
+    }
   };
 
   return (
     <div className="receipt-container">
       <div ref={receiptRef} className="receipt">
         <div className="receipt-header">
-          <img
-            src="/images/logo.jpeg"
-            alt="Arabian Grills & Kababs logo"
-            className="receipt-logo"
-          />
           <div>
             <h1>Arabian Grills & Kababs</h1>
             <p className="tagline">Fine Dining</p>

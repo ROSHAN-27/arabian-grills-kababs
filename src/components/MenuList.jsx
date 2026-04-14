@@ -18,6 +18,8 @@ export default function MenuList({ onAddItem }) {
 
       {/* Search Bar */}
       <input
+        id="menu-search"
+        name="menu-search"
         type="text"
         placeholder="Search items..."
         value={searchTerm}

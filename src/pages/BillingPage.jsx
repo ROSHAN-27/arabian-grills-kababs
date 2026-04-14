@@ -9,6 +9,7 @@ import '../styles/BillingPage.css';
 export default function BillingPage() {
   const [order, setOrder] = useState([]);
   const [completedOrder, setCompletedOrder] = useState(null);
+  const [billPrinted, setBillPrinted] = useState(false);
 
   const handleAddItem = (item) => {
     setOrder(prevOrder => {
@@ -58,23 +59,34 @@ export default function BillingPage() {
   if (completedOrder) {
     return (
       <div className="billing-page">
-        <Receipt
-          order={completedOrder.items}
-          orderNumber={completedOrder.orderNumber}
-          date={completedOrder.date}
-          time={completedOrder.time}
-          subtotal={completedOrder.subtotal}
-          tax={completedOrder.tax}
-          total={completedOrder.total}
-          amountGiven={completedOrder.amountGiven}
-          change={completedOrder.change}
-        />
-        <button
-          onClick={() => setCompletedOrder(null)}
-          className="new-order-btn"
-        >
-          Start New Order
-        </button>
+        <div className="receipt-section">
+          <Receipt
+            order={completedOrder.items}
+            orderNumber={completedOrder.orderNumber}
+            date={completedOrder.date}
+            time={completedOrder.time}
+            subtotal={completedOrder.subtotal}
+            tax={completedOrder.tax}
+            total={completedOrder.total}
+            amountGiven={completedOrder.amountGiven}
+            change={completedOrder.change}
+            onPrint={() => setBillPrinted(true)}
+          />
+        </div>
+
+        {billPrinted && (
+          <div className="new-order-section">
+            <button
+              onClick={() => {
+                setCompletedOrder(null);
+                setBillPrinted(false);
+              }}
+              className="new-order-btn"
+            >
+              Start New Order
+            </button>
+          </div>
+        )}
       </div>
     );
   }

@@ -7,6 +7,7 @@ import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('billing');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -23,27 +24,44 @@ function App() {
     }
   };
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    setIsMenuOpen(false); // Close menu on mobile after navigation
+  };
+
   return (
     <div className="app">
       <nav className="navbar">
         <div className="navbar-brand">
+          <img src="/images/logo.jpeg" alt="Arabian Grills & Kababs Logo" className="navbar-logo" />
           <h1>Arabian <span className="text-primary">Grills & </span> <span className="text-primary">Kababs</span></h1>
         </div>
-        <div className="navbar-menu">
+        
+        <button 
+          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
           <button
-            onClick={() => setCurrentPage('billing')}
+            onClick={() => handlePageChange('billing')}
             className={`nav-btn ${currentPage === 'billing' ? 'active' : ''}`}
           >
             💳 Billing
           </button>
           <button
-            onClick={() => setCurrentPage('kitchen')}
+            onClick={() => handlePageChange('kitchen')}
             className={`nav-btn ${currentPage === 'kitchen' ? 'active' : ''}`}
           >
             🍳 Kitchen
           </button>
           <button
-            onClick={() => setCurrentPage('orders')}
+            onClick={() => handlePageChange('orders')}
             className={`nav-btn ${currentPage === 'orders' ? 'active' : ''}`}
           >
             📋 Orders
@@ -69,6 +87,7 @@ function App() {
 
       <footer className="app-footer">
         <p>&copy; 2026 Arabian Grills & Kababs POS System | All Rights Reserved</p>
+        <p>Designed by Pathan Roshan Zameer</p>
       </footer>
     </div>
   );

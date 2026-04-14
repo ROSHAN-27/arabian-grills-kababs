@@ -5,6 +5,20 @@
   min-height: calc(100vh - 200px);
 }
 
+.receipt-section {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.new-order-section {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .billing-header {
   grid-column: 1 / -1;
   display: flex;
@@ -49,21 +63,21 @@
 
 .new-order-btn {
   display: block;
-  margin: 1rem auto;
-  padding: 1rem 2rem;
-  background-color: var(--success-color);
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  background-color: var(--primary-color);
   color: white;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .new-order-btn:hover {
-  background-color: #229954;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+  background-color: #c0392b;
 }
 
 /* Responsive */
