@@ -86,7 +86,7 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
       <body>
         <div class="receipt">
           <div class="header">
-            <img src="/images/Arabian Grills and kababs logo.jpeg" alt="Logo" />
+            <img src="/images/logo.jpeg" alt="Logo" />
             <div class="title">Arabian Grills & Kababs</div>
           </div>
           
@@ -142,7 +142,7 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
       <div ref={receiptRef} className="receipt">
         <div className="receipt-header">
           <img
-            src="/images/Arabian Grills and kababs logo.jpeg"
+            src="/images/logo.jpeg"
             alt="Arabian Grills & Kababs logo"
             className="receipt-logo"
           />

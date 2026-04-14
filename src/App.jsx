@@ -28,7 +28,7 @@ function App() {
       <nav className="navbar">
         <div className="navbar-brand">
           <img
-            src="/images/Arabian Grills and kababs logo.jpeg"
+            src="/images/logo.jpeg"
             alt="Arabian Grills & Kababs logo"
             className="nav-logo"
           />
