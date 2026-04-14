@@ -34,7 +34,10 @@ function App() {
       <nav className="navbar">
         <div className="navbar-brand">
           <img src="/images/logo.jpeg" alt="Arabian Grills & Kababs Logo" className="navbar-logo" />
-          <h1>Arabian <span className="text-primary">Grills & </span> <span className="text-primary">Kababs</span></h1>
+          <div className="title-container">
+            <div className="fire-animation">🔥</div>
+            <h1>Arabian <span className="text-primary">Grills & </span> <span className="text-primary">Kababs</span></h1>
+          </div>
         </div>
         
         <button 
