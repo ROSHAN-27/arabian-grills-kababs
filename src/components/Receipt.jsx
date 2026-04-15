@@ -5,8 +5,13 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
   const receiptRef = useRef();
 
   const handlePrint = () => {
-    const printWindow = window.open('', '', 'height=600,width=800');
-    printWindow.document.write(`
+    const printWindow = window.open('', '_blank', 'height=600,width=800');
+    if (!printWindow) {
+      alert('Popup blocked. Please allow popups to print the receipt.');
+      return;
+    }
+
+    const content = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -29,12 +34,6 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
             justify-content: center;
             gap: 10px;
             margin-bottom: 10px;
-          }
-          .header img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 8px;
           }
           .title {
             font-size: 20px;
@@ -131,13 +130,26 @@ export default function Receipt({ order, orderNumber, date, time, subtotal, tax,
         </div>
       </body>
       </html>
-    `);
-    printWindow.document.close();
-    printWindow.print();
+    `;
 
-    // Call the onPrint callback if provided
-    if (onPrint) {
-      onPrint();
+    printWindow.document.write(content);
+    printWindow.document.close();
+    printWindow.focus();
+
+    const triggerPrint = () => {
+      printWindow.print();
+      printWindow.onafterprint = () => {
+        printWindow.close();
+        if (onPrint) onPrint();
+      };
+    };
+
+    if (printWindow.document.readyState === 'complete') {
+      window.requestAnimationFrame(triggerPrint);
+    } else {
+      printWindow.onload = () => {
+        window.requestAnimationFrame(triggerPrint);
+      };
     }
   };
 

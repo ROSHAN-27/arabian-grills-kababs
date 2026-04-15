@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import BillingPage from './pages/BillingPage';
 import OrdersPage from './pages/OrdersPage';
 import Dashboard from './pages/Dashboard';
@@ -92,6 +93,7 @@ function App() {
         <p>&copy; 2026 Arabian Grills & Kababs POS System | All Rights Reserved</p>
         <p>Designed by Pathan Roshan Zameer</p>
       </footer>
+      <Analytics />
     </div>
   );
 }
