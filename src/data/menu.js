@@ -6,13 +6,13 @@ export const menuItems = [
 
   // Grilled Items
   { id: 5, name: 'Grilled Chicken', category: 'Grilled', image: '/images/grilled-chicken.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
-    { id: 6, name: 'Al faham Chicken', category: 'Grilled', image: '/images/grilled-chicken.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
+    { id: 6, name: 'Al faham Chicken', category: 'Grilled', image: '/images/al-faham-chicken.jpg', options: [{name: 'Half', price: 230}, {name: 'Full', price: 460}] },
 
   // Kolkata Kati Rolls
-    { id: 8, name: 'Chicken Roll', price: 80, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
-    { id: 9, name: 'Paneer Roll', price: 70, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
-    { id: 17, name: 'Egg Roll', price: 60, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
-    { id: 18, name: 'Egg Chicken Roll', price: 90, category: 'Kolkata Kati Rolls', image: '/images/chicken-shawarma.jpg' },
+    { id: 8, name: 'Chicken Roll', price: 80, category: 'Kolkata Kati Rolls', image: '/images/chicken-roll.jpg' },
+    { id: 9, name: 'Paneer Roll', price: 70, category: 'Kolkata Kati Rolls', image: '/images/paneer-roll.jpg' },
+    { id: 17, name: 'Egg Roll', price: 60, category: 'Kolkata Kati Rolls', image: '/images/egg-roll.jpg' },
+    { id: 18, name: 'Egg Chicken Roll', price: 90, category: 'Kolkata Kati Rolls', image: '/images/egg-chicken-roll.jpg' },
 
 
 
